@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block main_body %}
+<div class="container">
+    {{response}}
+    <div class="col my-4">
+
+        <h2>حالة الدفع بخصوص رقم الطلب الخاص بك {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '01' %}
+        تم الطلب بنجاح
+        {% else %}
+        فشل في تسجيل الطلب
+        {% endif%}
+
+    </div>
+
+</div>
+{% endblock main_body %}
